@@ -1,0 +1,26 @@
+<!-- historic.component.html -->
+
+<div class="container">
+    <h2>DETAILS FACTURE</h2>
+    <table class="table table-bordered mt-4">
+      <thead>
+        <tr>
+          <th>Reference ID</th>
+          <th>Date & Time</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of historicItems">
+          <td>{{ item.referenceId }}</td>
+          <td>{{ item.dateTime }}</td>
+          <td>
+            <button type="button" class="btn btn-link" (click)="showDetails(item)">
+              <i class="bi bi-info-circle"></i> Show Details
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

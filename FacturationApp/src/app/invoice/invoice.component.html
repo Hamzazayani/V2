@@ -1,0 +1,72 @@
+
+    <h1 class="text-center">Invoice</h1>
+    <div class="w-100 ml-2"  id="invoice">
+    <table class="table mt-4">
+      <thead class="table-dark">
+        <tr>
+          <th>Article Name</th>
+          <th class="text-end">Cost</th>
+          <th class="text-end">TVA (%)</th>
+          <th class="text-end">Promotion (%)</th>
+          <th class="text-end">Initial Payment</th>
+          <th class="text-end">Final Payment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>{{ item.articleName }}</td>
+          <td class="text-end">{{ item.cost | currency }}</td>
+          <td class="text-end">{{ item.tva }}</td>
+          <td class="text-end">{{ item.promotion }}</td>
+          <td class="text-end">{{ item.initialPayment | currency }}</td>
+          <td class="text-end">{{ item.finalPayment | currency }}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <!-- <tr>
+          <td colspan="4" class="text-end">Total Initial Payment</td>
+          <td class="text-end">{{ totalInitialPayment | currency }}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="4" class="text-end">Total Final Payment</td>
+          <td></td>
+          <td class="text-end">{{ totalFinalPayment | currency }}</td>
+        </tr> -->
+      </tfoot>
+    </table>
+  
+    <div class="row mb-2 w-100">
+        <div class="col-6">
+            <p class="text-start fw-bold text-dark">initalPayment</p>
+        </div>
+        <div class="col-6">
+            <p class="text-end fw-bold text-dark">{{ totalInitialPayment | currency }}</p>
+        </div>
+    </div>
+    <div class="row mb-2 w-100">
+        <div class="col-6">
+            <p class="text-start fw-bold text-dark">final Payment</p>
+        </div>
+        <div class="col-6">
+            <p class="text-end fw-bold text-dark">{{ totalInitialPayment | currency }}</p>
+        </div>
+    </div>
+    </div>
+    
+    
+    
+      <div *ngIf="!data" class="w-100">
+      <select class="form-select text-center form-select-dark "(change)="onDropdownChange($event)" >
+        <option selected>choose payment method</option>
+        
+        <option value="paiement">cash</option>
+        <option value="historique">carte</option>
+      </select>
+    
+  </div>
+  
+
+  
+  
+  

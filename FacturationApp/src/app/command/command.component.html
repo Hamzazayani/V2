@@ -1,0 +1,51 @@
+<div class="container mt-3 mb-3">
+    
+        <div class="d-flex align-items justify-content-between">
+          <div >
+            <button class="btn btn-primary" (click)="back()">
+            <i class="bi bi-back"></i></button>
+          </div> 
+          
+          <div class="">
+                <button class="btn btn-primary" (click)="addArticle()">Add</button>
+              </div>
+        </div>
+  
+    
+    <div class="row mt-4" *ngFor="let command of commands; let i = index">
+      <div class="col-md-3">
+        <select class="form-select" [(ngModel)]="command.category" aria-label="Select Category">
+          <option value="" disabled selected>Select Category</option>
+          <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <select class="form-select" [(ngModel)]="command.product" aria-label="Select Product">
+          <option value="" disabled selected>Select Product</option>
+
+          <option *ngFor="let product of products" [value]="product">{{ product }}</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <input type="number" class="form-control" [(ngModel)]="command.number" placeholder="Enter Number">
+      </div>
+      <div class="col-md-3">
+      
+        <button *ngIf="i>0" class="btn btn-danger btn-sm" (click)="deleteItem(i)">
+          <i class="bi bi-trash"></i> Delete
+        </button>      </div>
+    </div>
+    <div *ngIf="commands.length>0" class="mt-4 row" >
+      <div class="col-6">
+        <button class="btn btn-primary w-100">Save changes</button>
+      
+      </div>
+      <div class="col-6">
+        <button class="btn btn-primary w-100  " (click)="goToInvoice()" >invoice</button>
+      
+      </div>
+      
+      </div>
+</div>
+
+  

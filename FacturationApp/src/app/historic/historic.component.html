@@ -1,0 +1,41 @@
+<!-- historic.component.html -->
+
+<div class="container">
+    <h2>Historic Component</h2>
+    <div class="row justify-content-center">
+      <input type="text"(input)="filteredItems($event)" class="form-control" placeholder="Filter items by reference" >
+
+    </div>
+    <table class="table table-bordered mt-4">
+      <thead>
+        <tr>
+          <th>Reference ID</th>
+          <th>Date & Time</th>
+          <th>User</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of memoryData">
+          <td>{{ item.referenceId }}</td>
+          <td>{{ item.dateTime }}</td>
+          <td>{{ item.user }}</td>
+          <td>
+            <button type="button" class="btn btn-link" (click)="showDetails(item)">
+              <i class="bi bi-info-circle"></i> Show Details
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #dialogTemplate>
+    <h1 mat-dialog-title>Dialog Title</h1>
+    <div mat-dialog-content>
+      <p>This is the content of the dialog.</p>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button mat-dialog-close>Close</button>
+    </div>
+  </ng-template>
+  

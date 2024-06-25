@@ -1,0 +1,25 @@
+.container {
+    max-width: 800px;
+  }
+  
+  .table {
+    margin-top: 20px;
+  }
+  
+  .table th, .table td {
+    vertical-align: middle;
+  }
+  
+  .text-end {
+    text-align: right;
+  }
+  .form-select-dark {
+    background-color: #343a40; /* Dark background */
+    color: white; /* White text */
+    border-color: #343a40; /* Match border with background */
+  }
+  .form-select-dark option {
+    background-color: #343a40; /* Dark background for options */
+    color: white; /* White text for options */
+  }
+  

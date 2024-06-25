@@ -1,0 +1,7 @@
+.center-dialog .mat-dialog-container {
+    display: flex;
+    justify-content: top;
+    align-items: center;
+    height: 200vh; /* Full viewport height */
+    transform: translate(-50%, -50%);
+  }
